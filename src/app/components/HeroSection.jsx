@@ -34,7 +34,7 @@ const HeroSection = () => {
         </div>
 
         <div className="relative">
-          <div className="h-[360px] rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 shadow-inner"></div>
+            <img className="rounded-xl h-full w-full" src="https://i.ibb.co.com/21Y807xY/young-couple-protection-mask-holding-multiple-paper-shopping-bag-walking-corridor-large-shopping-mal.jpg" />
         </div>
       </div>
     </section>
