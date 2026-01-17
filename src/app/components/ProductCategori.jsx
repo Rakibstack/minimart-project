@@ -2,7 +2,7 @@ const categories = ["Electronics", "Fashion", "Groceries", "Accessories"];
 
 const ProductCategories = () => {
   return (
-    <section className="bg-gray-50 py-24">
+    <section className="bg-gray-50 py-18">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
           Product Categories
