@@ -1,11 +1,11 @@
 import React from 'react';
-import HeroSection from './components/HeroSection';
-import TrustSection from './components/TrustSection';
+import HeroSection from './components/Home/HeroSection';
+import TrustSection from './components/Home/TrustSection';
 import FeaturesSection from './FeaturesSection';
-import ProductCategories from './components/ProductCategori';
-import FeaturedProducts from './components/FeatureProduct';
-import WhyChooseUs from './components/WhyChoseSection';
-import CTASection from './components/CtaButton';
+import ProductCategories from './components/Home/ProductCategori';
+import FeaturedProducts from './components/Home/FeatureProduct';
+import WhyChooseUs from './components/Home/WhyChoseSection';
+import CTASection from './components/Home/CtaButton';
 
 const HomePage = () => {
   return (

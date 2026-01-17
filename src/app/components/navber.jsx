@@ -35,6 +35,14 @@ const Navbar = () => {
                             Items
                         </Link>
                     </li>
+                    <li>
+                        <Link
+                            href="/addItems"
+                            className="hover:text-gray-900 transition-colors"
+                        >
+                            Add Items
+                        </Link>
+                    </li>
 
                     <li>
                         <Link
