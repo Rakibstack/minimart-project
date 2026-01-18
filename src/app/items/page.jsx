@@ -3,7 +3,7 @@ import Link from "next/link";
 
 
    const iteams = async () => {
-    const res = await fetch('http://localhost:3000/api/iteams',);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/iteams`);
     const data = await res.json();
     return  data;
    }
