@@ -8,6 +8,8 @@ import Link from "next/link";
     return  data;
    }
 
+   export const dynamic = 'force-dynamic';
+
  const metadata = {
   title: "MiniMart | Products",
   description: "Browse our collection of high-quality products.",
