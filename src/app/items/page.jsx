@@ -1,43 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const products = [
-  {
-    id: "1",
-    name: "Wireless Headphones",
-    description: "Premium sound quality with noise cancellation.",
-    price: 89,
-    image: "/images/product1.jpg",
-  },
-  {
-    id: "2",
-    name: "Smart Watch",
-    description: "Track fitness, heart rate, and notifications.",
-    price: 119,
-    image: "/images/product2.jpg",
-  },
-  {
-    id: "3",
-    name: "Bluetooth Speaker",
-    description: "Portable speaker with deep bass and clarity.",
-    price: 59,
-    image: "/images/product3.jpg",
-  },
-  {
-    id: "4",
-    name: "Gaming Mouse",
-    description: "High precision mouse for professional gamers.",
-    price: 39,
-    image: "/images/product4.jpg",
-  },
-];
+
+   const iteams = async () => {
+    const res = await fetch('http://localhost:3000/api/iteams',);
+    const data = await res.json();
+    return  data;
+   }
 
  const metadata = {
   title: "MiniMart | Products",
   description: "Browse our collection of high-quality products.",
 };
 
-const ItemsPage = () => {
+const ItemsPage = async () => {
+
+  const products = await iteams();
+  
   return (
     <section className="bg-gray-50 min-h-screen py-24">
         <title>{metadata.title}</title>
@@ -56,12 +35,12 @@ const ItemsPage = () => {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {products.map((product) => (
             <div
-              key={product.id}
+              key={product._id}
               className="group relative rounded-2xl bg-white border p-5 transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
               {/* Image */}
               <div className="relative h-56 w-full overflow-hidden rounded-xl bg-gray-100">
-                <Image
+                <img
                   src={product.image}
                   alt={product.name}
                   fill
@@ -84,7 +63,7 @@ const ItemsPage = () => {
                   </span>
 
                   <Link
-                    href={`/items/${product.id}`}
+                    href={`/items/${product._id}`}
                     className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-800"
                   >
                     View Details

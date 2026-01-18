@@ -28,7 +28,7 @@ const HeroSection = () => {
               href="/login"
               className="rounded-md border px-6 py-3 text-gray-700 hover:bg-gray-100"
             >
-              Admin Login
+               Login
             </Link>
           </div>
         </div>

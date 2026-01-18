@@ -1,24 +1,17 @@
+import AddToCartButton from "@/app/components/AddtoCardButton";
 import Image from "next/image";
 import Link from "next/link";
 
-// Temporary static data (replace later with MongoDB/API)
-const product = {
-  id: "1",
-  name: "Wireless Headphones",
-  description:
-    "Experience premium sound quality with advanced noise cancellation and long-lasting comfort. Perfect for music lovers and professionals.",
-  price: 89,
-  image: "/images/product1.jpg",
-  category: "Electronics",
-  features: [
-    "Active Noise Cancellation",
-    "Up to 30 hours battery life",
-    "Bluetooth 5.3",
-    "Comfortable over-ear design",
-  ],
-};
+  const productDetails = async (id) => {
+    const res = await fetch(`http://localhost:3000/api/iteams/${id}`);
+    const data = await res.json();
+    return data;
+  }
 
-const ItemDetailsPage = () => {
+const ItemDetailsPage = async ({ params }) => {
+
+    const { id } = await params;
+  const product = await productDetails(id);
   return (
     <section className="bg-gray-50 min-h-screen py-24">
       <div className="container mx-auto px-4">
@@ -38,7 +31,7 @@ const ItemDetailsPage = () => {
         <div className="grid gap-16 lg:grid-cols-2 items-start">
           {/* Image Section */}
           <div className="relative w-full h-[420px] rounded-2xl overflow-hidden bg-gray-100 shadow-lg">
-            <Image
+            <img
               src={product.image}
               alt={product.name}
               fill
@@ -68,9 +61,7 @@ const ItemDetailsPage = () => {
 
             {/* Action Buttons */}
             <div className="mt-10 flex gap-4">
-              <button className="rounded-xl bg-gray-900 px-8 py-4 text-sm font-medium text-white transition hover:bg-gray-800">
-                Add to Cart
-              </button>
+              <AddToCartButton product={product}></AddToCartButton>
               <Link
                 href="/items"
                 className="rounded-xl border border-gray-300 px-8 py-4 text-sm font-medium text-gray-700 transition hover:bg-gray-100"
