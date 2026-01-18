@@ -32,9 +32,15 @@ const products = [
   },
 ];
 
+ const metadata = {
+  title: "MiniMart | Products",
+  description: "Browse our collection of high-quality products.",
+};
+
 const ItemsPage = () => {
   return (
     <section className="bg-gray-50 min-h-screen py-24">
+        <title>{metadata.title}</title>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-14 text-center">

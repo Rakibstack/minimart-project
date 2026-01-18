@@ -80,24 +80,6 @@ const ItemDetailsPage = () => {
             </div>
           </div>
         </div>
-
-        {/* Features Section */}
-        <div className="mt-24">
-          <h2 className="text-2xl font-bold text-gray-900">
-            Product Features
-          </h2>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {product.features.map((feature) => (
-              <div
-                key={feature}
-                className="rounded-xl border bg-white p-6 text-sm text-gray-700 shadow-sm transition hover:shadow-md"
-              >
-                ✔ {feature}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

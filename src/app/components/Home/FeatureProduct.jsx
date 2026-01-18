@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 // Sample product data
 const products = [
@@ -34,12 +35,12 @@ const FeaturedProducts = () => {
         {/* Header */}
         <div className="flex justify-between items-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">Featured Products</h2>
-          <a
+          <Link 
             href="/items"
             className="text-sm font-medium text-gray-700 hover:underline"
           >
             View all →
-          </a>
+          </Link>
         </div>
 
         {/* Product Cards */}
